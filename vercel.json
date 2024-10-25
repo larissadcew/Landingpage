@@ -2,30 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "frontend/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "frontend/build"
-      }
-    },
-    {
-      "src": "backend/manage.py",
-      "use": "@vercel/python"
+      "src": "next.config.ts",
+      "use": "@vercel/next"
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "backend/$1"
-    },
-    {
       "src": "/(.*)",
-      "dest": "frontend/build/$1"
+      "dest": "/"
     }
-  ],
-  "env": {
-    "DJANGO_SETTINGS_MODULE": "backend.settings",
-    "DATABASE_URL": "sua_conexao_com_o_banco_de_dados",
-    "SECRET_KEY": "sua_chave_secreta"
-  }
+  ]
 }
