@@ -1,1 +1,7 @@
-Django==4.2.9
+Django>=4.2,<5.0
+djangorestframework>=3.14,<4.0
+django-cors-headers>=3.13,<4.0  # Para permitir requisições cross-origin
+djangorestframework-simplejwt>=5.0,<6.0  # Para autenticação JWT, se necessário
+gunicorn>=20.1,<21.0  # Para deploy em produção
+psycopg2-binary>=2.9,<3.0  # Se você estiver usando PostgreSQL como banco de dados
+# Adicione outras dependências necessárias
